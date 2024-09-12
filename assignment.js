@@ -45,8 +45,7 @@ function checkDigitsInName(name) {
 if(typeof name !== 'string'){
     return 'Invalid Input'
 }
-const digitChecking = /\d/;  // RegExp
-return digitChecking.test(name);
+
 }
 // let result = checkDigitsInName("Raj123");
 // console.log(result)
@@ -62,4 +61,56 @@ return digitChecking.test(name);
 // console.log(result5)
 // let result6 = checkDigitsInName(["Raj"]);
 // console.log(result6)
+
+
+/*function signature/sample */
+function calculateFinalScore(obj) {
+    if(typeof obj !== 'object' || obj === null){
+        return 'Invalid Input'
+    }
+    const { name, testScore, schoolGrade, isFFamily } = obj;
+    if(typeof name !== "string" || typeof testScore !== "number" || typeof schoolGrade !== "number" ||typeof isFFamily !== "boolean" || testScore < 0 || testScore > 50 || schoolGrade < 0 || schoolGrade > 30 ){
+        return "Invalid Input"
+    }
+    let finalResult = testScore + schoolGrade;
+    
+    if (isFFamily) {
+        finalResult += 20;
+    }
+    return finalResult >= 80;
+}
+// let chance = calculateFinalScore({ name: "Rajib", testScore: 45,  schoolGrade: 25, isFFamily : true  });
+// console.log(chance);
+// let chance1 = calculateFinalScore({ name: "Rajib", testScore: 45,  schoolGrade: 25, isFFamily : false });
+// console.log(chance1);
+// let chance2 = calculateFinalScore("hello");
+// console.log(chance2);
+// let chance3 = calculateFinalScore({ name: "Rajib", testScore: 15,  schoolGrade: 25, isFFamily : true  });
+// console.log(chance3);
+
+
+function  waitingTime(waitingTimes  , serialNumber) {
+    if(Array.isArray(waitingTimes) === false|| typeof serialNumber !== "number"){
+        return "Invalid Input"
+    }
+    let avg = 0;
+    for(let num of waitingTimes){
+        avg += num;
+    }
+    }
+    // let time = waitingTime( [3,5,7,4,3,2,9], 10);
+    // console.log(time);
+    // let time1 = waitingTime( [13, 2], 6);
+    // console.log(time1);
+    // let time2 = waitingTime( [13, 2, 6, 7, 10], 6);
+    // console.log(time2);
+    // let time3 = waitingTime( [6], 4);
+    // console.log(time3);
+    // let time4 = waitingTime( 7 , 10);
+    // console.log(time4);
+    // let time5 = waitingTime( "[6,2]", 9);
+    // console.log(time5);
+    // let time6 = waitingTime( [7, 8, 3, 4, 5], "9");
+    // console.log(time6);
+
 
