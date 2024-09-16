@@ -93,24 +93,28 @@ function  waitingTime(waitingTimes  , serialNumber) {
     if(Array.isArray(waitingTimes) === false|| typeof serialNumber !== "number"){
         return "Invalid Input"
     }
-    let avg = 0;
-    for(let num of waitingTimes){
-        avg += num;
+    let sum = 0;
+    for(const waiting of waitingTimes){
+        sum += waiting;
+        avg = Math.round(sum / waitingTimes.length);
+        serialRemaining = serialNumber -1;
+        interviewFinished = serialRemaining - waitingTimes.length;
+        interviewTime = interviewFinished * avg;}
+        return interviewTime;
     }
-    }
-    // let time = waitingTime( [3,5,7,4,3,2,9], 10);
-    // console.log(time);
-    // let time1 = waitingTime( [13, 2], 6);
-    // console.log(time1);
-    // let time2 = waitingTime( [13, 2, 6, 7, 10], 6);
-    // console.log(time2);
-    // let time3 = waitingTime( [6], 4);
-    // console.log(time3);
-    // let time4 = waitingTime( 7 , 10);
-    // console.log(time4);
-    // let time5 = waitingTime( "[6,2]", 9);
-    // console.log(time5);
-    // let time6 = waitingTime( [7, 8, 3, 4, 5], "9");
-    // console.log(time6);
+    let time = waitingTime( [3,5,7,4,3,2,9], 10);
+    console.log(time);
+    let time1 = waitingTime( [13, 2], 6);
+    console.log(time1);
+    let time2 = waitingTime( [13, 2, 6, 7, 10], 6);
+    console.log(time2);
+    let time3 = waitingTime( [6], 4);
+    console.log(time3);
+    let time4 = waitingTime( 7 , 10);
+    console.log(time4);
+    let time5 = waitingTime( "[6,2]", 9);
+    console.log(time5);
+    let time6 = waitingTime( [7, 8, 3, 4, 5], "9");
+    console.log(time6);
 
 
